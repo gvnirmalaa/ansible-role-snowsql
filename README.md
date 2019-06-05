@@ -4,9 +4,10 @@ Ansible role to install and configure snowsql in any given instance, user and fo
 ## Requirements
 None.
 
-##Role Variables
-Available variables are listed below, along with default values (see defaults/main.yml):
+## Role Variables
 
+Available variables are listed below, along with default values (see defaults/main.yml):
+    
     user: ec2-user
 The user under which snowsql will be installed and configured.
 
@@ -29,10 +30,12 @@ This is the password credential for snowflake database
 None.
 
 ## Example Playbook
-  - hosts: localhost
-    roles:
-      - { role: gvnirmalaa.snowsql }
-# License
+
+    - hosts: localhost
+      roles:
+        - { role: gvnirmalaa.snowsql }
+
+## License
 MIT / BSD
 
 ## Author Information
