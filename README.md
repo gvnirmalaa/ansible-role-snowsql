@@ -6,7 +6,7 @@ None.
 
 ## Role Variables
 
-Available variables are listed below, along with default values (see defaults/main.yml):
+Available variables are listed below, along with default values ('see defaults/main.yml'):
     
     user: ec2-user
 The user under which snowsql will be installed and configured.
