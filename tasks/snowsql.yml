@@ -1,0 +1,25 @@
+---
+
+- name: download snowsql
+  get_url: url=http://s3-us-west-2.amazonaws.com/sfc-snowsql-updates/bootstrap/1.1/linux_x86_64/snowsql-1.1.79-linux_x86_64.bash  dest={{ target_folder }}
+  become: yes
+  become_user: "{{username}}"
+
+- name: deploy bash installer
+  shell: SNOWSQL_DEST={{ target_folder }} SNOWSQL_LOGIN_SHELL=~/.bash_profile bash "{{ target_folder }}/"snowsql-1.1.79-linux_x86_64.bash
+  become: yes
+  become_user: "{{username}}"
+
+- name: install installer
+  command: "{{target_folder}}/snowsql"
+  args:
+    chdir: "{{ target_folder}}"
+  become: yes
+  become_user: "{{username}}"
+
+- name: snowsql| Copy config template
+  template:
+    src: config.j2
+    dest: "{{target_folder}}/.snowsql/config"
+  become: yes
+  become_user: "{{username}}"

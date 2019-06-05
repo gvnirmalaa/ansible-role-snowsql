@@ -1,0 +1,8 @@
+---
+
+user: "{{username}}"
+target_folder: /home/{{user}}
+db_account_name: dbaccoutname
+db_region: dbregion
+db_user_name: dbusername
+db_password: dbpassword

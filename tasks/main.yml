@@ -1,0 +1,6 @@
+---
+
+- name: configSnowsql | Deploy
+  import_tasks: snowsql.yml
+  tags:
+    - configSnowsql
